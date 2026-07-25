@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nugent Seminar Series</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b132b;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container{
+    max-width:700px;
+    padding:40px;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-weight:normal;
+    color:#dddddd;
+}
+
+#countdown{
+    font-size:64px;
+    margin:40px 0;
+    color:#ffd166;
+    font-weight:bold;
+}
+
+button{
+    background:#2d6cdf;
+    color:white;
+    border:none;
+    padding:18px 36px;
+    font-size:22px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e56bb;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Nugent Seminar Series</h1>
+
+<h2>Coming Soon</h2>
+
+<div id="countdown">Loading...</div>
+
+<button>Join Seminar</button>
+
+</div>
+
+<script>
+
+const seminarDate = new Date("September 30, 2026 21:00:00");
+
+function updateCountdown(){
+
+    const now = new Date();
+
+    const diff = seminarDate - now;
+
+    if(diff <=0){
+        document.getElementById("countdown").innerHTML="LIVE NOW";
+        return;
+    }
+
+    const days=Math.floor(diff/(1000*60*60*24));
+    const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+    const secs=Math.floor((diff%(1000*60))/1000);
+
+    document.getElementById("countdown").innerHTML=
+        days+"d "
+        +hours+"h "
+        +mins+"m "
+        +secs+"s";
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+</script>
+
+</body>
+</html>
