@@ -10,7 +10,7 @@
 
 body{
     margin:0;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:Georgia, "Times New Roman", serif;
     background:#f6f1df;
     color:#183a22;
 }
@@ -36,58 +36,77 @@ h2{
 
 .speaker{
     margin-top:8px;
-    margin-bottom:35px;
+    margin-bottom:20px;
     font-weight:normal;
     color:#1f4028;
 }
 
+.divider{
+    width:180px;
+    height:3px;
+    background:#b9973f;
+    margin:0 auto 40px auto;
+    border-radius:2px;
+}
 
 .card{
-
-    margin-top:50px;
     background:white;
     border-radius:20px;
     padding:40px;
     box-shadow:0 8px 25px rgba(0,0,0,.15);
-
 }
 
 .session{
-
     color:#9a7416;
     letter-spacing:2px;
     text-transform:uppercase;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:1.5em;
     font-weight:normal;
-
 }
 
 .title{
-
     font-size:2.2em;
     margin:15px 0;
-
 }
 
 .reference{
-
     font-style:italic;
     color:#666;
+    margin-bottom:30px;
+}
 
+.event-date{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.5em;
+    color:#24552f;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.event-time{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.5em;
+    color:#24552f;
+}
+
+.countdown-label{
+    margin-top:35px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.1em;
+    color:#777;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .countdown{
-
-    margin:40px 0;
+    margin:15px 0 40px 0;
     font-size:3em;
     font-weight:bold;
     color:#275d36;
-
 }
 
 .button{
-
     display:inline-block;
     background:#24552f;
     color:white;
@@ -96,51 +115,30 @@ h2{
     border-radius:8px;
     font-size:1.2em;
     transition:.3s;
-
 }
 
 .button:hover{
-
     background:#16351d;
-
-}
-
-.footer{
-
-    margin-top:40px;
-
-}
-
-.event-date{
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:1.5em;
-    color:#24552f;
-    font-weight:600;
-    margin-bottom:10px;
-
-}
-
-.event-time{
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:1.5em;
-    color:#24552f;
-
 }
 
 @media (max-width:700px){
 
 h1{
-font-size:2.3em;
+    font-size:2.3em;
 }
 
 .title{
-font-size:1.5em;
+    font-size:1.5em;
 }
 
 .countdown{
-font-size:2em;
+    font-size:2em;
+}
+
+.event-date,
+.event-time,
+.session{
+    font-size:1.2em;
 }
 
 }
@@ -161,6 +159,8 @@ font-size:2em;
 By Pastor Ron Nugent
 </h2>
 
+<div class="divider"></div>
+
 <div class="card">
 
 <div class="session">
@@ -175,6 +175,18 @@ A Very Different Kingdom
 The Parable of the Sower (Matthew 13:1–9, 18–23)
 </div>
 
+<div class="event-date">
+Thursday 3 September 2026
+</div>
+
+<div class="event-time">
+8:00 PM (Perth • Singapore • Malaysia • Hong Kong)
+</div>
+
+<div class="countdown-label">
+Starts In
+</div>
+
 <div class="countdown" id="countdown">
 Loading...
 </div>
@@ -184,18 +196,6 @@ href="https://gmhc.link/NugentSeries"
 target="_blank">
 Join on Zoom
 </a>
-
-<div class="footer">
-
-<div class="event-date">
-Thursday 3 September 2026
-</div>
-
-<div class="event-time">
-8:00 PM (Perth • Singapore • Malaysia • Hong Kong)
-</div>
-
-</div>
 
 </div>
 
@@ -207,40 +207,30 @@ const seminarDate = new Date("2026-09-03T20:00:00+08:00");
 
 function updateCountdown(){
 
-const now = new Date();
+    const now = new Date();
+    const diff = seminarDate - now;
 
-const diff = seminarDate - now;
+    if(diff <= 0){
 
-if(diff<=0){
+        document.getElementById("countdown").innerHTML = "LIVE NOW";
+        return;
 
-document.getElementById("countdown").innerHTML="LIVE NOW";
+    }
 
-return;
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000) / 60000);
+    const secs  = Math.floor((diff % 60000) / 1000);
 
-}
-
-const days=Math.floor(diff/86400000);
-
-const hours=Math.floor((diff%86400000)/3600000);
-
-const mins=Math.floor((diff%3600000)/60000);
-
-const secs=Math.floor((diff%60000)/1000);
-
-document.getElementById("countdown").innerHTML=
-
-days+" days "
-
-+hours+" hrs "
-
-+mins+" min "
-
-+secs+" sec";
+    document.getElementById("countdown").innerHTML =
+        days + " days " +
+        hours + " hrs " +
+        mins + " min " +
+        secs + " sec";
 
 }
 
 setInterval(updateCountdown,1000);
-
 updateCountdown();
 
 </script>
