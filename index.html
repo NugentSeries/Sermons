@@ -22,6 +22,7 @@ body{
     background-attachment:fixed;
 }
 
+
 .container{
     max-width:900px;
     margin:auto;
@@ -29,11 +30,13 @@ body{
     text-align:center;
 }
 
+
 h1{
     font-size:3.6em;
     margin-bottom:10px;
     color:#1f4028;
 }
+
 
 h2{
     font-weight:normal;
@@ -41,12 +44,14 @@ h2{
     margin-top:0;
 }
 
+
 .speaker{
     margin-top:8px;
     margin-bottom:20px;
     font-weight:normal;
     color:#1f4028;
 }
+
 
 .divider{
     width:180px;
@@ -56,6 +61,7 @@ h2{
     border-radius:2px;
 }
 
+
 .card{
     background:rgba(255,255,255,0.95);
     border-radius:20px;
@@ -63,19 +69,21 @@ h2{
     box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
+
 .session{
     color:#9a7416;
     letter-spacing:2px;
     text-transform:uppercase;
     font-family:Arial, Helvetica, sans-serif;
     font-size:1.5em;
-    font-weight:normal;
 }
+
 
 .title{
     font-size:2.2em;
     margin:15px 0;
 }
+
 
 .reference{
     font-style:italic;
@@ -83,12 +91,14 @@ h2{
     margin-bottom:10px;
 }
 
+
 .ornament{
     font-size:1.6em;
     color:#8f7a2f;
     margin:22px 0;
     line-height:1;
 }
+
 
 .event-date{
     font-family:Arial, Helvetica, sans-serif;
@@ -98,177 +108,402 @@ h2{
     margin-bottom:8px;
 }
 
+
 .event-time{
     font-family:Arial, Helvetica, sans-serif;
     font-size:1.5em;
     color:#24552f;
 }
 
+
+/* ===== Countdown ===== */
+
+
 .countdown-label{
-    margin-top:22px;
+    margin-top:30px;
     font-family:Arial, Helvetica, sans-serif;
     font-size:1.1em;
     color:#777;
-    letter-spacing:2px;
+    letter-spacing:4px;
     text-transform:uppercase;
 }
 
-.countdown{
-    margin:15px 0 40px 0;
-    font-size:3em;
-    font-weight:bold;
-    color:#275d36;
+
+.countdown-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+    margin:25px 0 45px 0;
+
 }
+
+
+.time-box{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.95),
+        rgba(245,238,215,0.9)
+    );
+
+    border-radius:16px;
+
+    padding:20px 10px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12),
+    inset 0 0 0 1px rgba(185,151,63,.25);
+
+    animation:floatBox 4s ease-in-out infinite;
+
+}
+
+
+.time-box:nth-child(2){
+    animation-delay:.3s;
+}
+
+.time-box:nth-child(3){
+    animation-delay:.6s;
+}
+
+.time-box:nth-child(4){
+    animation-delay:.9s;
+}
+
+
+.number{
+
+    font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+    font-size:4.8em;
+
+    line-height:1;
+
+    font-weight:700;
+
+    letter-spacing:-3px;
+
+    color:#24552f;
+
+    text-shadow:
+    0 3px 10px rgba(36,85,47,.25);
+
+}
+
+
+.label{
+
+    margin-top:12px;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-size:.85em;
+
+    letter-spacing:3px;
+
+    color:#9a7416;
+
+}
+
+
+@keyframes floatBox{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}
+
+
+
+/* Button */
+
 
 .button{
+
     display:inline-block;
+
     background:#24552f;
+
     color:white;
+
     padding:18px 40px;
+
     text-decoration:none;
+
     border-radius:8px;
+
     font-size:1.2em;
+
     transition:.3s;
+
 }
+
 
 .button:hover{
+
     background:#16351d;
-}
-
-@media (max-width:700px){
-
-h1{
-    font-size:2.3em;
-}
-
-.title{
-    font-size:1.5em;
-}
-
-.countdown{
-    font-size:2em;
-}
-
-.event-date,
-.event-time,
-.session{
-    font-size:1.2em;
-}
 
 }
+
+
+
+/* Mobile */
+
+
+@media(max-width:700px){
+
+    h1{
+        font-size:2.3em;
+    }
+
+
+    .title{
+        font-size:1.5em;
+    }
+
+
+    .countdown-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .number{
+
+        font-size:3.5em;
+
+    }
+
+
+    .event-date,
+    .event-time,
+    .session{
+
+        font-size:1.2em;
+
+    }
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <h1>A Kingdom Not of This World</h1>
 
-<h2>A Midweek Sermon Series in 7 Sermons from Matthew 13</h2>
+
+<h2>
+A Midweek Sermon Series in 7 Sermons from Matthew 13
+</h2>
+
 
 <h2 class="speaker">
 By Pastor Ron Nugent
 </h2>
 
+
 <div class="divider"></div>
 
+
+
 <div class="card">
+
 
 <div class="session">
 Session 1
 </div>
 
+
+
 <div class="title">
 A Very Different Kingdom
 </div>
+
+
 
 <div class="reference">
 The Parable of the Sower (Matthew 13:1–9, 18–23)
 </div>
 
-<div class="ornament">❦</div>
+
+
+<div class="ornament">
+❦
+</div>
+
+
 
 <div class="event-date">
 Thursday 3 September 2026
 </div>
 
+
+
 <div class="event-time">
 8:00 PM (Perth • Singapore • Malaysia • Hong Kong)
 </div>
 
-<div class="ornament">❦</div>
+
+
+<div class="ornament">
+❦
+</div>
+
+
 
 <div class="countdown-label">
 Starts In
 </div>
 
+
+
 <div class="countdown-grid">
 
-    <div class="time-box">
-        <div class="number" id="days">0</div>
-        <div class="label">DAYS</div>
-    </div>
 
-    <div class="time-box">
-        <div class="number" id="hours">0</div>
-        <div class="label">HOURS</div>
-    </div>
+<div class="time-box">
+<div class="number" id="days">0</div>
+<div class="label">DAYS</div>
+</div>
 
-    <div class="time-box">
-        <div class="number" id="minutes">0</div>
-        <div class="label">MINS</div>
-    </div>
 
-    <div class="time-box">
-        <div class="number" id="seconds">0</div>
-        <div class="label">SECS</div>
-    </div>
+<div class="time-box">
+<div class="number" id="hours">0</div>
+<div class="label">HOURS</div>
+</div>
+
+
+<div class="time-box">
+<div class="number" id="minutes">0</div>
+<div class="label">MINS</div>
+</div>
+
+
+<div class="time-box">
+<div class="number" id="seconds">0</div>
+<div class="label">SECS</div>
+</div>
+
 
 </div>
+
+
 
 <a class="button"
 href="https://gmhc.link/NugentSeries"
 target="_blank">
+
 Join on Zoom
+
 </a>
 
-</div>
+
 
 </div>
+
+
+</div>
+
+
+
 
 <script>
 
+
 const seminarDate = new Date("2026-09-03T20:00:00+08:00");
+
 
 function updateCountdown(){
 
+
     const now = new Date();
+
     const diff = seminarDate - now;
 
+
+
     if(diff <= 0){
-        document.getElementById("countdown").innerHTML = "LIVE NOW";
+
+        document.getElementById("days").innerHTML="LIVE";
+        document.getElementById("hours").innerHTML="";
+        document.getElementById("minutes").innerHTML="";
+        document.getElementById("seconds").innerHTML="";
+
         return;
+
     }
 
-    const days  = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins  = Math.floor((diff % 3600000) / 60000);
-    const secs  = Math.floor((diff % 60000) / 1000);
 
-    document.getElementById("countdown").innerHTML =
-        days + " days " +
-        hours + " hrs " +
-        mins + " min " +
-        secs + " sec";
+
+    const days =
+    Math.floor(diff / 86400000);
+
+
+
+    const hours =
+    Math.floor((diff % 86400000) / 3600000);
+
+
+
+    const mins =
+    Math.floor((diff % 3600000) / 60000);
+
+
+
+    const secs =
+    Math.floor((diff % 60000) / 1000);
+
+
+
+    document.getElementById("days").innerHTML =
+    days.toString().padStart(3,"0");
+
+
+    document.getElementById("hours").innerHTML =
+    hours.toString().padStart(2,"0");
+
+
+    document.getElementById("minutes").innerHTML =
+    mins.toString().padStart(2,"0");
+
+
+    document.getElementById("seconds").innerHTML =
+    secs.toString().padStart(2,"0");
+
+
 }
 
+
+
 setInterval(updateCountdown,1000);
+
 updateCountdown();
 
+
 </script>
+
 
 </body>
 </html>
