@@ -11,8 +11,15 @@
 body{
     margin:0;
     font-family:Georgia, "Times New Roman", serif;
-    background:#f6f1df;
     color:#183a22;
+
+    background:
+        linear-gradient(rgba(246,241,223,0.88), rgba(246,241,223,0.88)),
+        url("background1.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 }
 
 .container{
@@ -50,7 +57,7 @@ h2{
 }
 
 .card{
-    background:white;
+    background:rgba(255,255,255,0.95);
     border-radius:20px;
     padding:40px;
     box-shadow:0 8px 25px rgba(0,0,0,.15);
@@ -222,10 +229,8 @@ function updateCountdown(){
     const diff = seminarDate - now;
 
     if(diff <= 0){
-
         document.getElementById("countdown").innerHTML = "LIVE NOW";
         return;
-
     }
 
     const days  = Math.floor(diff / 86400000);
@@ -238,7 +243,6 @@ function updateCountdown(){
         hours + " hrs " +
         mins + " min " +
         secs + " sec";
-
 }
 
 setInterval(updateCountdown,1000);
