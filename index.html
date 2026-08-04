@@ -114,15 +114,20 @@ h2{
 }
 
 .countdown{
-    margin:25px auto 40px auto;
+    margin:25px auto 40px;
     display:flex;
     justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+    width:100%;
+    max-width:560px;
+    flex-wrap:nowrap;
 }
 
 .time-box{
-    width:120px;
+    flex:1 1 90px;
+    max-width:120px;
+    min-width:70px;
     height:100px;
 
     background:
@@ -275,9 +280,22 @@ h1{
 }
 
 .countdown{
+    gap:8px;
+}
+
+.time-box{
+    height:80px;
+    min-width:65px;
+}
+
+.time-number{
     font-size:2em;
 }
 
+.time-label{
+    font-size:.65em;
+    letter-spacing:1px;
+}
 .bio-card{
     flex-direction:column;
 }
